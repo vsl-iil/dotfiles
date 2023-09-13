@@ -1,0 +1,29 @@
+# ====== DWM ======
+
+#while xsetroot -name "`date`"
+#do
+#    sleep 1
+#done &
+
+# status bar
+sh /home/pupkich/builds/ext/dwm-bar/dwm_bar.sh &
+# wallpaper
+ls /home/pupkich/Images/bg | xargs shuf -n1 -e | xargs -I {} feh --no-fehbg --bg-center /home/pupkich/Images/bg/{}
+# opacity
+picom &
+# redshift
+redshift -l 55.75222:37.61556 &
+# keybinds (screenshot etc)
+xbindkeys -f $XDG_CONFIG_HOME/xbindkeys/.xbindkeysrc
+# at-spi2-atk bug fix
+export NO_AT_BRIDGE=1
+# screensaver + locker
+xscreensaver --no-splash &
+xss-lock -- xscreensaver-command -lock &
+
+exec dwm
+
+# ====== Other WMs ======
+#exec openbox
+#exec awesomewm
+#exec icewm-session

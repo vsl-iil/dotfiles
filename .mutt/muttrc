@@ -1,0 +1,16 @@
+set from = "workregor@mail.ru"
+set realname = "Егор Львов"
+
+set imap_user = "workregor@mail.ru"
+set imap_pass = "NnAEHiAHUyxP9F92gzY9"
+
+set smtp_url = "smtps://workregor:NnAEHiAHUyxP9F92gzY9@smtp.mail.ru:465"
+set smtp_pass = "NnAEHiAHUyxP9F92gzY9"
+
+set folder = "imaps://imap.mail.ru:993"
+set spoolfile = "+INBOX"
+
+set header_cache = "~/.cache/mutt"
+set editor = "vim"
+
+set record = "Отправленные"

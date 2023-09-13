@@ -1,0 +1,45 @@
+" Подсветка синтаксиса
+syntax on
+
+" Нумерация строк
+set number relativenumber
+
+" Подсвечивает текущую строку 
+set cursorline
+hi CursorLine term=reverse cterm=bold ctermbg=0 gui=bold
+hi CursorLineNr term=reverse cterm=bold ctermbg=0 gui=bold
+
+" Автодополнение на Tab
+set wildmenu
+set wildmode=list:longest
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+
+" Ограничитель 80 символов
+set colorcolumn=80
+hi ColorColumn ctermbg=235
+
+" Автоотступ
+set autoindent
+set smartindent
+
+set foldmethod=marker
+
+" PLUGINS ------------------------------------------------------------------ {{{
+
+" Powerline
+let g:airline_powerline_fonts = 1
+
+" Clang
+let g:clang_library_path='/usr/lib/libclang.so'
+
+" +------------------------+  ALE  +---------------------------------------+
+" Airline ALE support
+let g:airline#extensions#ale#enabled = 1
+
+" ALE lint only on save
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+
+" Disable (hopefully) the ugly sidebar
+set signcolumn=no
+" }}}
